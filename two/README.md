@@ -81,3 +81,15 @@ Epoch 20/20
 Epoch 00020: LearningRateScheduler setting learning rate to 0.000424869.
 60000/60000 [==============================] - 5s 85us/step - loss: 0.0220 - acc: 0.9935 - val_loss: 0.0259 - val_acc: 0.9917
 <keras.callbacks.History at 0x7fce2c5b1b38>
+# model evaluate results
+[0.025869489812187386, 0.9917]
+# Procedure I have followed
+1.First created a structure without any batch normalization,drop out, got around 99.14 validation accuracy
+2.Second then I stopped using bias,used batch normalization
+3.Third I have used global average pooling, but there is a gap between validation and train accuracies, and training accuracy 
+  is almost nearing to 100
+4.Fourth step I have used dropout then gap reduced and overfitting also solved.
+5.Then I changed the convolution before global average pooling, still I got 99.17 validation accuracy only with the following paramters
+Total params: 12,880
+Trainable params: 12,688
+Non-trainable params: 192
